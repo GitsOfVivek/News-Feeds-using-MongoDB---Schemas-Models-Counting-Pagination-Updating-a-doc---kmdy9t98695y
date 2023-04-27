@@ -8,7 +8,7 @@ const onePageArticleCount = 10
 // Parse JSON bodies (as sent by API clients)
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
+const { newsArticleModel } = require('./connector')
 app.get('/newFeeds', async (req, res) => {
     let limit = req.query.limit;
     let offset = req.query.offset;
